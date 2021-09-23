@@ -1,4 +1,4 @@
 package br.com.letscode;
 
-public class Corrente {
+public class Corrente extends Conta {
 }

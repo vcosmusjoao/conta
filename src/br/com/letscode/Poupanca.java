@@ -1,4 +1,4 @@
 package br.com.letscode;
 
-public class Poupanca {
+public class Poupanca extends Conta {
 }
