@@ -1,8 +1,18 @@
 package br.com.letscode;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.util.Scanner;
+
 public class ContaTeste {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Scanner sc= new Scanner(System.in);
+
+
+
+
+
+
     }
 }
