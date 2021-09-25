@@ -71,4 +71,14 @@ public class Conta {
             this.saldo = resultado;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "tipoCliente=" + tipoCliente +
+                ", numConta=" + numConta +
+                ", nome='" + nome + '\'' +
+                ", saldo=" + saldo +
+                '}';
+    }
 }

@@ -3,7 +3,7 @@ package br.com.letscode;
 import java.util.List;
 
 public class ContaTeste {
-    Banco banco;
+    private Banco banco = new Banco();
 
     public static void main(String[] args) {
         ContaTeste teste = new ContaTeste();
@@ -14,6 +14,10 @@ public class ContaTeste {
         criarContas();
 
         List<Conta> contas = banco.listarContas();
+
+        for (Conta conta : contas) {
+            System.out.println(conta);
+        }
     }
 
     private void criarContas() {
