@@ -9,10 +9,10 @@ public class Investimento extends Conta {
         super(tipoCliente, numConta, nome, saldo);
     }
 
+
     public void sacar(double valor){
-        double resultado=super.getSaldo()-valor;
-        if(resultado>0){
-            super.setSaldo(super.getSaldo()-valor);
+        if(valor>0){
+            this.saldo+=valor;
         }
     }
 
