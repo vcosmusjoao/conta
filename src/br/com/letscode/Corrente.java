@@ -10,12 +10,10 @@ public class Corrente extends Conta {
     }
 
     public void depositar(double valor){
-        if(valor>0){
-            this.saldo+=valor;
+        if(valor > 0){
+            super.saldo += valor;
         }
     }
-
-
-    }
+}
 
 
