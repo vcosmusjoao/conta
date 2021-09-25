@@ -59,14 +59,14 @@ public class Conta {
     }
     
     public void sacar(double valor){
-        double resultado = saldo-valor;
+        double resultado = saldo - valor;
         if(resultado >= 0){
             this.saldo = resultado;
         }
     }
 
     public void transferencia(double valor){
-        double resultado = saldo-valor;
+        double resultado = saldo - valor;
         if(resultado >= 0){
             this.saldo = resultado;
         }

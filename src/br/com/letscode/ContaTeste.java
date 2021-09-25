@@ -15,6 +15,8 @@ public class ContaTeste {
 
         List<Conta> contas = banco.listarContas();
 
+
+
         for (Conta conta : contas) {
             System.out.println(conta);
         }

@@ -14,6 +14,20 @@ public class Corrente extends Conta {
             super.saldo += valor;
         }
     }
+
+    public void sacar(double valor){
+        double resultado = super.saldo - valor;
+        if(resultado >= 0){
+            super.saldo = resultado;
+        }
+    }
+
+    public void transferencia(double valor){
+        double resultado = super.saldo - valor;
+        if(resultado >= 0){
+            super.saldo = resultado;
+        }
+    }
 }
 
 
