@@ -2,7 +2,7 @@ package br.com.letscode;
 
 public class Conta {
 
-    private TipoCliente tipoCliente;
+    protected TipoCliente tipoCliente;
     private int numConta;
     private String nome;
     protected double saldo;
@@ -53,22 +53,32 @@ public class Conta {
 
 
     public void depositar(double valor){
-        if(valor>0){
-           this.saldo+=valor;
+        if(valor > 0){
+           this.saldo += valor;
         }
-
-
     }
     
     public void sacar(double valor){
-        double resultado= saldo-valor;
-        if(resultado>=0){
-            saldo=resultado;
+        double resultado = saldo - valor;
+        if(resultado >= 0){
+            this.saldo = resultado;
         }
     }
 
+    public void transferencia(double valor){
+        double resultado = saldo - valor;
+        if(resultado >= 0){
+            this.saldo = resultado;
+        }
+    }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "tipoCliente=" + tipoCliente +
+                ", numConta=" + numConta +
+                ", nome='" + nome + '\'' +
+                ", saldo=" + saldo +
+                '}';
+    }
 }
