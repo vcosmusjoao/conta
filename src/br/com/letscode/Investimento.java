@@ -10,7 +10,7 @@ public class Investimento extends Conta {
     }
 
     public void sacar(double valor){
-        if(valor>0){
+        if(valor > 0){
             super.saldo += valor;
         }
     }
