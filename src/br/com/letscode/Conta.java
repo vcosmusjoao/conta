@@ -1,6 +1,6 @@
 package br.com.letscode;
 
-public class Conta {
+public class    Conta {
 
     protected TipoCliente tipoCliente;
     private int numConta;
