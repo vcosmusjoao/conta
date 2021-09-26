@@ -2,7 +2,7 @@ package br.com.letscode;
 
 public class Conta {
 
-    protected TipoCliente tipoCliente;
+    private TipoCliente tipoCliente;
     private int numConta;
     private String nome;
     protected double saldo;
