@@ -22,7 +22,7 @@ public class Poupanca extends Conta {
         }
     }
 
-    public void transferencia(double valor){
+    public void transferencia(double valor, boolean transferir){
         double resultado = super.saldo - valor;
         if(resultado >= 0){
             super.saldo = resultado;

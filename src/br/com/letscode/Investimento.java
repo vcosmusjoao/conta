@@ -8,6 +8,7 @@ public class Investimento extends Conta {
     public Investimento(TipoCliente tipoCliente, int numConta, String nome, double saldo) {
         super(tipoCliente, numConta, nome, saldo);
     }
+
     public void sacar(double valor){
 
         double resultado;

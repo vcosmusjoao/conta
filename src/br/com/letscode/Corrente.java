@@ -31,6 +31,10 @@ public class Corrente extends Conta {
     public void transferencia(double valor){
         double resultado = super.saldo - valor;
         if(resultado >= 0){
+            if (super.tipoCliente == TipoCliente.PJ) {
+                resultado -= (valor * 0.005);
+            }
+
             super.saldo = resultado;
         }
     }

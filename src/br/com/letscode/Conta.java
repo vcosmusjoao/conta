@@ -65,9 +65,12 @@ public class    Conta {
         }
     }
 
-    public void transferencia(double valor){
-        double resultado = saldo - valor;
+    public void transferencia(double valor, boolean transferir){
+        double resultado = this.saldo - valor;
         if(resultado >= 0){
+            if(transferir) {
+
+            }
             this.saldo = resultado;
         }
     }
