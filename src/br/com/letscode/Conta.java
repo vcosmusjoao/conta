@@ -1,15 +1,11 @@
 package br.com.letscode;
 
-public class    Conta {
+public class Conta {
 
     protected TipoCliente tipoCliente;
     private int numConta;
     private String nome;
     protected double saldo;
-
-
-    public Conta() {
-    }
 
     public Conta(TipoCliente tipoCliente, int numConta, String nome, double saldo) {
         this.tipoCliente = tipoCliente;
@@ -17,7 +13,6 @@ public class    Conta {
         this.nome = nome;
         this.saldo = saldo;
     }
-
 
     public TipoCliente getTipoCliente() {
         return tipoCliente;
@@ -51,7 +46,6 @@ public class    Conta {
         this.saldo = saldo;
     }
 
-
     public void depositar(double valor){
         if(valor > 0){
            this.saldo += valor;
@@ -65,13 +59,11 @@ public class    Conta {
         }
     }
 
-    public void transferencia(double valor, boolean transferir){
+    public void transferencia(Conta conta, double valor){
         double resultado = this.saldo - valor;
         if(resultado >= 0){
-            if(transferir) {
-
-            }
             this.saldo = resultado;
+            conta.depositar(valor);
         }
     }
 

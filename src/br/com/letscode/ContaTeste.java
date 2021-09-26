@@ -15,9 +15,10 @@ public class ContaTeste {
 
         List<Conta> contas = banco.listarContas();
 
-//        for (Conta conta : contas) {
-//            System.out.println(conta);
-//        }
+        contas.get(2).transferencia(contas.get(1), 100);
+        //contas.get(2).depositar(100);
+        System.out.println(contas.get(1).getSaldo());
+        System.out.println(contas.get(2).getSaldo());
     }
 
     private void criarContas() {

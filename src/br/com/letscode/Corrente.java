@@ -1,10 +1,6 @@
 package br.com.letscode;
 
 public class Corrente extends Conta {
-
-    public Corrente() {
-    }
-
     public Corrente(TipoCliente tipoCliente, int numConta, String nome, double saldo) {
         super(tipoCliente, numConta, nome, saldo);
     }
@@ -16,25 +12,25 @@ public class Corrente extends Conta {
     }
 
     public void sacar(double valor){
-
-        double resultado;
-        if(valor>0 && super.getTipoCliente()==TipoCliente.PF){
-            resultado = saldo-valor ;
-        }if(valor>0 && super.getTipoCliente()==TipoCliente.PJ){
-            resultado = saldo-(valor*1.005);
+        double resultado = 0;
+        if(valor > 0 && super.getTipoCliente() == TipoCliente.PF){
+            resultado = super.saldo - valor ;
+        }else if(valor > 0 && super.getTipoCliente() == TipoCliente.PJ){
+            resultado = super.saldo - (valor * 1.005);
         }else{
             System.out.println("Você não possui saldo para sacar esse valor");
-
         }
+        super.saldo = resultado;
     }
 
-    public void transferencia(double valor){
+    public void transferencia(Conta conta, double valor){
         double resultado = super.saldo - valor;
         if(resultado >= 0){
             if (super.tipoCliente == TipoCliente.PJ) {
                 resultado -= (valor * 0.005);
             }
 
+            conta.depositar(valor);
             super.saldo = resultado;
         }
     }

@@ -1,10 +1,6 @@
 package br.com.letscode;
 
 public class Poupanca extends Conta {
-
-    public Poupanca() {
-    }
-
     public Poupanca(TipoCliente tipoCliente, int numConta, String nome, double saldo) {
         super(tipoCliente, numConta, nome, saldo);
     }
@@ -22,10 +18,11 @@ public class Poupanca extends Conta {
         }
     }
 
-    public void transferencia(double valor, boolean transferir){
+    public void transferencia(Conta conta, double valor){
         double resultado = super.saldo - valor;
         if(resultado >= 0){
             super.saldo = resultado;
+            conta.depositar(valor);
         }
     }
 }
