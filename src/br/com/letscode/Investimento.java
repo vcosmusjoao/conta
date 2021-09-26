@@ -6,15 +6,26 @@ public class Investimento extends Conta {
     }
 
     public void sacar(double valor){
-        double resultado = 0;
-        if(valor > 0 && super.getTipoCliente() == TipoCliente.PF){
-            resultado = saldo - valor ;
-        }else if(valor > 0 && super.getTipoCliente() == TipoCliente.PJ){
-            resultado = saldo - (valor * 1.005);
-        }else{
+        double resultado = super.saldo - valor;
+        if(resultado >= 0){
+            if (super.getTipoCliente() == TipoCliente.PJ) {
+                resultado -= (valor * 0.005);
+            }
+
+            super.saldo = resultado;
+        }
+        else {
             System.out.println("Você não possui saldo para sacar esse valor");
         }
+    }
 
-        super.saldo = resultado;
+    public void investir(double valor) {
+        if (valor > 0) {
+            if (super.getTipoCliente() == TipoCliente.PJ) {
+                valor += valor * 0.02;
+            }
+
+            super.depositar(valor);
+        }
     }
 }
