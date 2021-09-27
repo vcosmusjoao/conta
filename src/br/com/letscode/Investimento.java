@@ -9,7 +9,7 @@ public class Investimento extends Conta {
         double resultado = super.saldo - valor;
         if(resultado >= 0){
             if (super.getTipoCliente() == TipoCliente.PJ) {
-                resultado -= (valor * 0.005);
+                resultado -= (valor * 0.02);
             }
 
             super.saldo = resultado;
@@ -26,6 +26,21 @@ public class Investimento extends Conta {
             }
 
             super.depositar(valor);
+        }
+    }
+
+    public void transferencia(Conta conta, double valor){
+        double resultado = super.saldo - valor;
+        if(resultado >= 0){
+            if (super.getTipoCliente() == TipoCliente.PJ) {
+                resultado -= (valor * 0.005);
+            }
+
+            conta.depositar(valor);
+            super.saldo = resultado;
+        }
+        else {
+            System.out.println("Você não possui saldo para transferir esse valor");
         }
     }
 }
