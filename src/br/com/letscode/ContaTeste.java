@@ -29,25 +29,27 @@ public class ContaTeste {
 
         if (conta instanceof Investimento) {
             ((Investimento) conta).investir(200);
-            System.out.printf("Investimento realizado, seu saldo é R$ %.2f\n\n", conta.getSaldo());
+            System.out.printf("Investimento realizado, seu saldo é R$ %.2f\n", conta.getSaldo());
         }
         else {
             conta.depositar(200);
             System.out.printf("Deposito realizado, seu saldo é R$ %.2f\n", conta.getSaldo());
-            conta.transferencia(contas.get(4), 300);
-            System.out.printf("%s, transferencia realizada, seu saldo é R$ %.2f\n",
-                    conta.getNome(), conta.getSaldo());
-
-            System.out.printf("%s, você recebeu uma transferencia, seu saldo é R$ %.2f\n\n",
-                    contas.get(4).getNome(), contas.get(4).getSaldo());
         }
+
+        conta.transferencia(contas.get(4), 300);
+        System.out.printf("%s, transferencia realizada, seu saldo é R$ %.2f\n",
+                conta.getNome(), conta.getSaldo());
+
+        System.out.printf("%s, você recebeu uma transferencia, seu saldo é R$ %.2f\n\n",
+                contas.get(4).getNome(), contas.get(4).getSaldo());
     }
 
     private void criarContas() {
-        banco.adicionarConta(new Poupanca(TipoCliente.PF, 1, "Lauredi", 500));
-        banco.adicionarConta(new Corrente(TipoCliente.PJ, 2, "Leo", 500));
-        banco.adicionarConta(new Corrente(TipoCliente.PF, 3, "Victor", 500));
-        banco.adicionarConta(new Investimento(TipoCliente.PJ, 4, "Lidia", 500));
-        banco.adicionarConta(new Investimento(TipoCliente.PF, 5, "Kauan", 500));
+        banco.adicionarConta(new Poupanca(TipoCliente.PJ, 1, "Restricao", 500));
+        banco.adicionarConta(new Poupanca(TipoCliente.PF, 2, "Lauredi", 500));
+        banco.adicionarConta(new Corrente(TipoCliente.PJ, 3, "Leo", 500));
+        banco.adicionarConta(new Corrente(TipoCliente.PF, 4, "Victor", 500));
+        banco.adicionarConta(new Investimento(TipoCliente.PJ, 5, "Lidia", 500));
+        banco.adicionarConta(new Investimento(TipoCliente.PF, 6, "Kauan", 500));
     }
 }
