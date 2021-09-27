@@ -20,7 +20,7 @@ public class Corrente extends Conta {
         if(resultado >= 0){
             super.saldo = resultado;
         }
-    }
+    } 
 
     public void transferencia(double valor){
         double resultado = super.saldo - valor;

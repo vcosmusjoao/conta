@@ -28,5 +28,14 @@ public class ContaTeste {
         banco.adicionarConta(new Corrente(TipoCliente.PF, 3, "Victor", 500));
         banco.adicionarConta(new Investimento(TipoCliente.PJ, 4, "Lidia", 500));
         banco.adicionarConta(new Investimento(TipoCliente.PF, 5, "Kauan", 500));
+
     }
+
+
+
+
+
+
+
+
 }
