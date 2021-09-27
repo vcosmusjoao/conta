@@ -1,2 +1,3 @@
-package br.com.letscode;public class Cliente {
+package br.com.letscode;
+public class Cliente {
 }
